@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAllUsers } from "./../../services/usersService"; // Ajusta la ruta según tu estructura de carpetas
+import { getAllUsers } from "../../services/usersService.js"; // Ajusta la ruta según tu estructura de carpetas
 
 // Definimos una interfaz para los usuarios
 interface User {
@@ -19,7 +19,7 @@ const ReporteUsuarios: React.FC = () => {
         // Si el campo en la respuesta es 'nombre', lo mapeamos a 'username'
         const formattedUsers = data.map((user: any) => ({
           id: user.id,
-          username: user.nombre, // O ajusta según el nombre real de la propiedad
+          username: user.username, // O ajusta según el nombre real de la propiedad
         }));
         setUsers(formattedUsers);
       } catch (err) {

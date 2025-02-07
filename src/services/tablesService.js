@@ -67,13 +67,3 @@ export const updateTableAvailability = async (id, availability) => {
     throw error;
   }
 };
-
-// Eliminar un ingrediente
-export const deleteTable = async (id: number) => {
-  try {
-    await axios.delete(`${API_URL}/${id}`);
-  } catch (error) {
-    console.error("Error eliminando ingrediente:", error);
-    throw error;
-  }
-};

@@ -43,5 +43,6 @@
     "vite": "^5.4.10",
     "vitest": "^3.0.2",
     "vitest-fetch-mock": "^0.4.3"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

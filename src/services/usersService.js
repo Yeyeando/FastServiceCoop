@@ -45,13 +45,3 @@ export const updateUser = async (id, userData) => {
     throw error;
   }
 };
-
-// Eliminar un usuario
-export const deleteUser = async (id: number) => {
-  try {
-    await axios.delete(`${API_URL}/${id}`);
-  } catch (error) {
-    console.error("Error eliminando usuario:", error);
-    throw error;
-  }
-};
