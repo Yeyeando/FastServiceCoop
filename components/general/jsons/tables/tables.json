@@ -1,0 +1,154 @@
+{
+  "tables": [
+    {
+      "id": 1,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 1",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks1",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters1",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers1",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts1",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 2",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks2",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters2",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers2",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts2",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 3",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks3",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters3",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers3",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts3",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 4",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks4",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters4",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers4",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts4",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 5",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks5",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters5",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers5",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts5",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "/img/chair.svg",
+      "alt": "logout",
+      "title": "chair 6",
+      "description": "Imagen de un icono de salir o logout.",
+      "menu": [
+        {
+          "title": "Drinks6",
+          "url": "/img/drink.jpg"
+        },
+        {
+          "title": "Starters6",
+          "url": "/img/starter.jpg"
+        },
+        {
+          "title": "Burguers6",
+          "url": "/img/burguer.jpg"
+        },
+        {
+          "title": "Desserts6",
+          "url": "/img/dessert.jpg"
+        }
+      ]
+    }
+  ]
+}

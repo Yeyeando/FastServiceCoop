@@ -1,0 +1,53 @@
+.buttons {
+    display: flex;
+    justify-content: space-around; 
+    position: fixed; 
+    bottom: 7vh; 
+    left: 0; 
+    width: 100%; 
+    padding: 10px 0; 
+    z-index: 10; 
+    pointer-events: auto;
+}
+
+.button {
+    flex: 1; /* Los botones ocupan espacios iguales */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.button-cancel,
+.button-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: none; /* Sin bordes */
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 16px;
+    color: white; 
+    font-style: italic;
+    width: 30vw;
+    height: 10vh;
+    cursor: pointer;
+}
+
+.button-cancel {
+    background-color: rgba(255, 6, 6, 0.7); 
+    z-index: 10;
+}
+
+.button-confirm {
+    background-color: rgba(7, 125, 163, 0.7);
+    z-index: 10;
+}
+
+.button-cancel:hover {
+    background-color: rgba(255, 6, 6)
+}
+
+.button-confirm:hover{
+    background-color: rgba(7, 125, 163);
+}

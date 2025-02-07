@@ -1,0 +1,36 @@
+/* Fondo negro, texto en itálica y detalles en color rojo */
+body {
+    background-color: black;
+    color: white;
+    font-style: italic;
+}
+
+a {
+    color: red;
+}
+
+header, footer {
+    color: red;
+}
+
+h1, h2 {
+    color: red;
+}
+
+nav a {
+    color: red;
+}
+
+button {
+    background-color: red;
+    color: white;
+}
+
+.btn-default {
+    background-color: red;
+    color: white;
+}
+
+.nav-arrows .btn-default {
+    color: red;
+}

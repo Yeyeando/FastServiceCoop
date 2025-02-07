@@ -1,0 +1,135 @@
+.ingredient-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Cambié a 100vh para cubrir toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  animation: slide-in 0.5s ease-out;
+}
+
+.ingredient-panel-content {
+  background-color: #282a42;
+  width: 100%;
+  height: 70dvh;
+  border-radius: 16px 16px 0 0;
+  padding: 20px;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+  animation: panel-appear 0.5s ease-out;
+  color: #ffffff;
+  position: relative; /* Para posicionar el botón "Cancelar" */
+  overflow: scroll;
+}
+
+.ingredient-panel-content h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.ingredient-panel-content h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.ingredient-list {
+  margin-top: 20px;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgb(217, 217, 217, 0.1);
+  
+}
+
+.ingredient-controls{
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  
+}
+.ingredient-icon {
+  width: 20px; /* Tamaño del botón */
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ingredient-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+/* Botón "Cancelar" */
+/* Botón "Cancelar" con ícono */
+.cancel-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-button img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Botón de confirmación centrado y semitransparente */
+.confirm-button {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background-color: rgba(7, 125, 163, 0.7); /* Azul semitransparente */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.confirm-button:hover {
+  background-color: rgba(7, 125, 163, 1); /* Azul opaco al pasar el mouse */
+}
+.confirm-button:disabled {
+  background-color: rgba(255, 41, 41, 0.5);
+  cursor: not-allowed;
+}
+
+/* Animación */
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

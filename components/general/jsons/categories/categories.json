@@ -1,0 +1,108 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "drink",
+      "category": [
+        {
+          "name": "drink1",
+          "url": "/img/drink.jpg",
+          "ingredients": [1, 2]
+        },
+        {
+          "name": "drink2",
+          "url": "/img/drink.jpg",
+          "ingredients": [3]
+        },
+        {
+          "name": "drink3",
+          "url": "/img/drink.jpg",
+          "ingredients": [4]
+        },
+        {
+          "name": "drink4",
+          "url": "/img/drink.jpg",
+          "ingredients": [1, 3]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "starter",
+      "category": [
+        {
+          "name": "starter1",
+          "url": "/img/starter.jpg",
+          "ingredients": [1]
+        },
+        {
+          "name": "starter2",
+          "url": "/img/starter.jpg",
+          "ingredients": [2, 5]
+        },
+        {
+          "name": "starter3",
+          "url": "/img/starter.jpg",
+          "ingredients": [3]
+        },
+        {
+          "name": "starter4",
+          "url": "/img/starter.jpg",
+          "ingredients": [4]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "burguer",
+      "category": [
+        {
+          "name": "burguer1",
+          "url": "/img/burguer.jpg",
+          "ingredients": [1, 2, 5]
+        },
+        {
+          "name": "burguer2",
+          "url": "/img/burguer.jpg",
+          "ingredients": [1, 2]
+        },
+        {
+          "name": "burguer3",
+          "url": "/img/burguer.jpg",
+          "ingredients": [1, 4]
+        },
+        {
+          "name": "burguer4",
+          "url": "/img/burguer.jpg",
+          "ingredients": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "dessert",
+      "category": [
+        {
+          "name": "dessert1",
+          "url": "/img/dessert.jpg",
+          "ingredients": [1]
+        },
+        {
+          "name": "dessert2",
+          "url": "/img/dessert.jpg",
+          "ingredients": [2]
+        },
+        {
+          "name": "dessert3",
+          "url": "/img/dessert.jpg",
+          "ingredients": [3]
+        },
+        {
+          "name": "dessert4",
+          "url": "/img/dessert.jpg",
+          "ingredients": [4]
+        }
+      ]
+    }
+  ]
+}
