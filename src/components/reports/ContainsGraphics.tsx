@@ -97,8 +97,8 @@ const ContainsGraphics: React.FC = () => {
       {
         label: "Total Quantity per Ingredient",
         data: quantities,
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgb(255, 6, 6)",
+        borderColor: "rgb(0, 0, 0)",
         borderWidth: 1,
       },
     ],
