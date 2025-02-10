@@ -9,7 +9,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { getAllContaints } from "../../services/containsService.js"; // Ajusta la ruta según tu estructura
+import { getAllContaints } from "../../services/containsService.js";
+import { getAllIngredients } from "../../services/ingredientsService.js";
 
 // Registrar los componentes necesarios de Chart.js
 ChartJS.register(
@@ -21,32 +22,49 @@ ChartJS.register(
   Legend
 );
 
-// Definimos la interfaz para la relación contains
+// Interfaz para la relación contains
 interface Contain {
   idDish: number;
   idIngredient: number;
   quantity: number;
 }
 
+// Interfaz para ingredientes (ajustada al JSON recibido)
+interface Ingredient {
+  id_ingredient: number;
+  name: string;
+  contains?: any; // esta propiedad la ignoramos en este caso
+}
+
 const ContainsGraphics: React.FC = () => {
   const [contains, setContains] = useState<Contain[]>([]);
+  const [ingredients, setIngredients] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchContains = async () => {
+    const fetchData = async () => {
       try {
-        const data = await getAllContaints();
-        setContains(data);
+        const containsData = await getAllContaints();
+        const ingredientsData: Ingredient[] = await getAllIngredients();
+
+        // Crear un mapeo usando id_ingredient en lugar de id
+        const ingredientsMap: Record<number, string> = {};
+        ingredientsData.forEach((ingredient) => {
+          ingredientsMap[ingredient.id_ingredient] = ingredient.name;
+        });
+
+        setContains(containsData);
+        setIngredients(ingredientsMap);
       } catch (err) {
-        console.error("Error al obtener la información de contains:", err);
+        console.error("Error al obtener la información:", err);
         setError("Error al cargar los datos del gráfico.");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchContains();
+    fetchData();
   }, []);
 
   if (loading) {
@@ -57,18 +75,27 @@ const ContainsGraphics: React.FC = () => {
     return <div>{error}</div>;
   }
 
-  // Preparar los datos para el gráfico:
-  // Cada etiqueta combina el id del dish con el id del ingredient
-  const labels = contains.map(
-    (item) => `Dish ${item.idDish} - Ingredient ${item.idIngredient}`
-  );
-  const quantities = contains.map((item) => item.quantity);
+  // Agrupar por nombre del ingrediente y sumar sus cantidades
+  const ingredientQuantities: Record<string, number> = {};
+  contains.forEach(({ idIngredient, quantity }) => {
+    const ingredientName =
+      ingredients[idIngredient] || `Ingredient ${idIngredient}`;
+    if (ingredientQuantities[ingredientName]) {
+      ingredientQuantities[ingredientName] += quantity;
+    } else {
+      ingredientQuantities[ingredientName] = quantity;
+    }
+  });
+
+  // Preparar los datos para el gráfico
+  const labels = Object.keys(ingredientQuantities);
+  const quantities = Object.values(ingredientQuantities);
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Quantity",
+        label: "Total Quantity per Ingredient",
         data: quantities,
         backgroundColor: "rgba(75, 192, 192, 0.6)",
         borderColor: "rgba(75, 192, 192, 1)",
@@ -85,20 +112,20 @@ const ContainsGraphics: React.FC = () => {
       },
       title: {
         display: true,
-        text: "Cantidad de Ingredientes en Platos",
+        text: "Cantidad Total de Ingredientes en Platos",
       },
     },
     scales: {
       x: {
         title: {
           display: true,
-          text: "Dish - Ingredient",
+          text: "Ingredient Name",
         },
       },
       y: {
         title: {
           display: true,
-          text: "Quantity",
+          text: "Total Quantity",
         },
         beginAtZero: true,
       },
@@ -107,7 +134,7 @@ const ContainsGraphics: React.FC = () => {
 
   return (
     <div>
-      <h2>Gráfico de la Relación Contains</h2>
+      <h2>Gráfico de Ingredientes en Platos</h2>
       <Bar data={data} options={options} />
     </div>
   );

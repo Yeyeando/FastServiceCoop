@@ -1,3 +1,4 @@
+// ingredientsService.js
 import axios from "axios";
 
 const API_URL = "http://localhost:8080/ingredients";
@@ -14,7 +15,7 @@ export const getAllIngredients = async () => {
 };
 
 // Obtener un ingrediente por ID
-export const getIngredientById = async (id: number) => {
+export const getIngredientById = async (id) => {
   try {
     const response = await axios.get(`${API_URL}/${id}`);
     return response.data;
@@ -25,7 +26,7 @@ export const getIngredientById = async (id: number) => {
 };
 
 // Crear un nuevo ingrediente
-export const createIngredient = async (ingredient: { name: string }) => {
+export const createIngredient = async (ingredient) => {
   try {
     await axios.post(API_URL, ingredient);
   } catch (error) {
@@ -35,10 +36,7 @@ export const createIngredient = async (ingredient: { name: string }) => {
 };
 
 // Actualizar un ingrediente
-export const updateIngredient = async (
-  id: number,
-  ingredient: { name: string }
-) => {
+export const updateIngredient = async (id, ingredient) => {
   try {
     await axios.put(`${API_URL}/${id}`, ingredient);
   } catch (error) {
@@ -48,7 +46,7 @@ export const updateIngredient = async (
 };
 
 // Eliminar un ingrediente
-export const deleteIngredient = async (id: number) => {
+export const deleteIngredient = async (id) => {
   try {
     await axios.delete(`${API_URL}/${id}`);
   } catch (error) {
